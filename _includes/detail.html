@@ -1,23 +1,27 @@
 <div id="main" class="pure-u-1">
     <div class="email-content">
         <div class="email-content-header pure-g">
-            <div class="pure-u-1-2">
+            <div class="pure-u-3-5">
                 <h1 class="email-content-title">{{ include.detail.title }}</h1>
                 <p class="email-content-subtitle">
-                    From <a>{{ site.owner }}</a> at <span>{{ include.detail.date }}</span>
+                    From <a>{{ site.owner }}</a> at <span>{{ include.detail.date | default: site.time}}</span>
                 </p>
             </div>
             
-             <div class="email-content-controls pure-u-1-2">
-                <button class="secondary-button pure-button">Reply</button>
-                <button class="secondary-button pure-button">Forward</button>
-                <button class="secondary-button pure-button">Move to</button>
+             <div class="email-content-controls pure-u-2-5">
+              {% if include.detail.previous %}
+              <a class="secondary-button pure-button" href="{{include.detail.previous.url}}" alt="{{include.detail.previous.title}}">Previous message</a>
+              {% endif %}
+              {% if include.detail.next %}
+              <a class="secondary-button pure-button" href="{{include.detail.next.url}}" alt="{{include.detail.next.title}}">Next message</a>
+              {% endif %}
             </div>
-            
         </div>
         <div class="email-content-body">
-          {{ include.detail.content }}
-          
+          {{ include.detail.content | markdownify }}
+          {% unless include.detail.content %}
+            {{ content | markdownify }}
+          {% endunless %}
           {% include signature.html %}
         </div>
     </div>
