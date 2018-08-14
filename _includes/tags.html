@@ -1,0 +1,4 @@
+{% assign tags = site.tags | sort %}
+{% for tag in  tags %}
+  <li class="pure-menu-item"><a href="#" class="pure-menu-link">{{tag[0] | capitalize}}</a></li>
+{% endfor %}
