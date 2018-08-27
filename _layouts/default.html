@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="{{site.description}}">
       <title>@{{ site.title }}{% if page.title %}: {{ page.title }}{% endif %}</title>
       <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
@@ -11,30 +11,19 @@
       <![endif]-->
       <!--[if gt IE 8]><!-->
           <link rel="stylesheet" href="/css/layouts/email.css">
-      <!--<![endif]-->
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!--<![endif]-->  
       <link rel="shortcut icon" href="/favicon.ico">
+      
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
       <link rel="stylesheet" href="/css/sergueivm.css">
   </head>
   <body>
-    <div id="layout" class="content pure-g">
-        {% include menu.html %}
-        <div id="list" class="pure-u-1">
-            {% assign posts = site.posts%}
-            {% if page.url == "/" %}
-              {% assign detail = posts.first%}            
-            {% else %}
-              {% assign detail = page%}
-            {% endif %}
-            {% assign lastPost = posts.first%}
-            {% for post in posts%}
-              {% capture unread %}{% if lastPost.id == post.id %}email-item-unread{% else %}email-item-read{% endif %}{% endcapture%}
-              {% capture selected %}{% if detail.id == post.id %}email-item-selected{% endif %}{% endcapture%}
-              {% include summary.html post = post unread = unread selected = selected%}
-            {% endfor %}
-        </div>
-        {% include detail.html detail = detail %}
-    </div>
-    <script src="https://yui-s.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+    {% include header.html%}
+    <main class="container">
+    {{content}}
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
