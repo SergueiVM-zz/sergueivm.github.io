@@ -17,7 +17,7 @@ future: false
 timezone: Europe/Madrid
 
 tag_page_layout: tag
-tag_page_dir: tags
+tag_page_dir: .
 
 plugins:
   - jekyll-feed
