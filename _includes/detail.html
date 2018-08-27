@@ -6,6 +6,15 @@
                 <p class="email-content-subtitle">
                     From <a>{{ site.owner }}</a> at <span>{{ include.detail.date | default: site.time}}</span>
                 </p>
+                <div>
+                {% assign tags = include.detail.tags  %}
+                {% for tag in tags %}
+                <div class="badge">
+                  <div class="status gray {{tag}}"><span>{{tag}}</span></div>
+                </div>
+                {% endfor %}
+                </div>
+
             </div>
             
              <div class="email-content-controls pure-u-2-5">
@@ -18,6 +27,7 @@
             </div>
         </div>
         <div class="email-content-body">
+
           {{ include.detail.content | markdownify }}
           {% unless include.detail.content %}
             {{ content | markdownify }}

@@ -16,5 +16,9 @@ show_drafts: false
 future: false
 timezone: Europe/Madrid
 
+tag_page_layout: tag
+tag_page_dir: tags
+
 plugins:
   - jekyll-feed
+  - jekyll/tagging
