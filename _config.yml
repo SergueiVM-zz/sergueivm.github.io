@@ -19,6 +19,9 @@ timezone: Europe/Madrid
 tag_page_layout: tag
 tag_page_dir: .
 
+sass:
+  style: compact   
+
 plugins:
   - jekyll-feed
   - jekyll/tagging
