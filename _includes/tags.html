@@ -1,4 +1,0 @@
-{% assign tags = site.tags  %}
-{% for tag in tags %}
-  <li class="pure-menu-item"><a href="/{{ site.tag_page_dir }}/{{ tag[0] | slugify: 'pretty' }}/" class="pure-menu-link">{{tag[0] | capitalize}}</a></li>
-{% endfor %}

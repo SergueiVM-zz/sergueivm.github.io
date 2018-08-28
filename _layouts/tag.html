@@ -1,39 +1,15 @@
 ---
 layout: default
 ---
-<!doctype html>
-<html lang="es">
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="{{site.description}}">
-      <title>@{{ site.title }}{% if page.title %}: {{ page.title }}{% endif %}</title>
-      <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
-      <!--[if lte IE 8]>
-          <link rel="stylesheet" href="/css/layouts/email-old-ie.css">
-      <![endif]-->
-      <!--[if gt IE 8]><!-->
-          <link rel="stylesheet" href="/css/layouts/email.css">
-      <!--<![endif]-->
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-      <link rel="shortcut icon" href="/favicon.ico">
-      <link rel="stylesheet" href="/css/sergueivm.css">
-  </head>
-  <body>
-    <div id="layout" class="content pure-g">
-        {% include menu.html %}
-        <div id="list" class="pure-u-1">
-            {% assign posts = site.tags[page.tag] %}
-            {% assign detail = posts.first%}            
-            {% assign lastPost = posts.first%}
-            {% for post in posts%}
-              {% capture unread %}{% if lastPost.id == post.id %}email-item-unread{% else %}email-item-read{% endif %}{% endcapture%}
-              {% capture selected %}{% if detail.id == post.id %}email-item-selected{% endif %}{% endcapture%}
-              {% include summary.html post = post unread = unread selected = selected%}
-            {% endfor %}
-        </div>
-        {% include detail.html detail = detail %}
-    </div>
-    <script src="https://yui-s.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
-  </body>
-</html>
+<h1>Artículos sobre <em>"{{page.tag}}"<em></h1>
+
+  {% for post in site.tags[page.tag] %}
+    <a href="{{post.url}}" class="article">
+    <article>
+      <h2>{{ post.title}}</h2>
+      <p>{{ post.excerpt}}</p>
+    </article>
+    </a>
+  {% endfor %}
+
+  
