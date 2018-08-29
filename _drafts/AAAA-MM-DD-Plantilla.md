@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Plantilla de Ejemplo"
 ---
 Lorem markdownum quin! Tibi aqua sublimemque ingemuit sorores se summis, colla,
