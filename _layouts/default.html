@@ -26,5 +26,8 @@
         <li><small>Ult. Generación: {{site.time | date_to_xmlschema}}</small></li>
       </ul>
     <footer>
+    {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
   </body>
 </html>
