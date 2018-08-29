@@ -16,12 +16,19 @@ show_drafts: false
 future: false
 timezone: Europe/Madrid
 
-tag_page_layout: tag
-tag_page_dir: .
+jekyll-archives:
+  enabled: all
+  layout: archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/:name/'
+    category: '/:name/'
 
 sass:
   style: compact   
 
 plugins:
   - jekyll-feed
-  - jekyll/tagging
+  - jekyll-archives

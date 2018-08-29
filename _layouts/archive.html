@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{% capture titulo %}
+  {% case page.type %}
+    {% when 'tag' %}
+      Artículos etiquetados con "{{page.title}}"
+    {% when 'category' %}
+      Artículos de la categoria "{{page.title}}"
+    {% when 'year' %}
+      Artículos de {{ page.date | date: "%Y" }}
+    {% when 'month' %}
+      Artículos de {{ page.date | date: '%B, %Y' }}
+    {% when 'day' %}
+      Artículos del día {{ page.date | date: "%d/%m/%Y" }}
+    {% else %}
+      Lista de artículos
+  {% endcase %}
+{% endcapture %}
+<h1>{{titulo}}</h1>
+
+{% for post in page.posts %}
+  <a href="{{post.url}}" class="article">
+  <article>
+    <h2>{{ post.title}}</h2>
+    <p>{{ post.excerpt}}</p>
+  </article>
+  </a>
+{% endfor %}
