@@ -21,7 +21,7 @@ layout: default
   <ul>
   {% assign tags = site.tags | sort %}
   {% for tag in tags %}
-      <li><a href="/{{tag[0]}}"><strong>{{tag[0] | capitalize}}</strong></a></li>
+      <li><a href="/{{tag[0] | slugify}}"><strong>{{tag[0] | capitalize}}</strong></a></li>
   {% endfor %}
   </ul>
 </section>
