@@ -8,17 +8,17 @@ layout: default
 {% capture titulo %}
   {% case page.type %}
     {% when 'tag' %}
-      Artículos etiquetados con "{{page.title}}"
+      Contenidos etiquetados con "{{page.title}}"
     {% when 'category' %}
-      Artículos de la categoria "{{page.title}}"
+      Contenidos de la categoria "{{page.title}}"
     {% when 'year' %}
-      Artículos de {{ page.date | date: "%Y" }}
+      Contenidos de {{ page.date | date: "%Y" }}
     {% when 'month' %}
-      Artículos de {{ page.date | date: '%B, %Y' }}
+      Contenidos de {{ page.date | date: '%B, %Y' }}
     {% when 'day' %}
-      Artículos del día {{ page.date | date: "%d/%m/%Y" }}
+      Contenidos del día {{ page.date | date: "%d/%m/%Y" }}
     {% else %}
-      Lista de artículos
+      Lista de contenidos
   {% endcase %}
 {% endcapture %}
 <h1>{{titulo}}</h1>
