@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Titulo del Post"
+title: "Plantilla de Ejemplo"
 ---
 Lorem markdownum quin! Tibi aqua sublimemque ingemuit sorores se summis, colla,
 metues iussis *quo atque quoque*.

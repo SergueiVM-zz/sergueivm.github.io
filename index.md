@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<h1>Índice</h1>
+# Índice
 {% if site.posts.size > 0 %}
 <div class="flex-grid">
 <section class="col">
@@ -35,7 +35,11 @@ layout: default
 </section>
 </div>
 {% else %}
-  Hola.
-  Estoy remodelando la página como puedes ver. Espero tenerla lista muy pronto.
-  Por favor, disculpa las molestias.  
+  Hola!!!
+  
+  Como podras comprobar estoy remodelando la página por eso aún no hay contenido.
+
+  Espero tenerla lista muy pronto, por favor, disculpa las molestias.
+  
+  Puedes seguirme en las redes sociales que tienes al pie de página o suscribirte al [feed Rss](/feed.xml) para enterarte cuando publico contenidos.
 {% endif %}
