@@ -2,7 +2,9 @@
 layout: post
 title: "Diseño API Rest"
 tags:
-  - Diseño API
+  - API Design
+categories:
+  - articulos
 ---
 El diseño  API puede parecer una ciencia oscura si lo miramos desde fuera, pero si nos fijamos un poco, el estándar HTTP nos da directamente unas buenas prácticas para aplicar al diseño.
 
@@ -30,3 +32,7 @@ Cada día se nos presentan preguntas del tipo:
 - ¿Cómo mapeo las operaciones “no CRUD”?
 - ¿Cómo notifico el resultado de una operación en este escenario?
 - ¿Qué HATEOAS he de utilizar para…?
+
+## Referencias
+- [Arquitecturas REST y sus niveles](https://www.arquitecturajava.com/arquitecturas-rest-y-sus-niveles)
+- [Wikipedia: REST](https://es.wikipedia.org/REST)
