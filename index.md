@@ -18,20 +18,12 @@ layout: default
 
 <section class="col">
   <h1>... por temas</h1>
-  {% for tag in site.tags %}
-    <section>
-      <a href="/{{tag[0]}}"><h2>{{tag[0] | capitalize}}</h2></a>
-    
-      {%for post in tag[1]%}
-        <a href="{{post.url}}" class="article">
-        <article>
-          <h3>{{ post.title}} <small>({{post.date | date: "%d/%m/%Y"}})</small></h3>
-          <p>{{ post.excerpt}}</p>
-        </article>
-        </a>
-      {%endfor%}
-    </section>
+  <ul>
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags %}
+      <li><a href="/{{tag[0]}}"><strong>{{tag[0] | capitalize}}</strong></a></li>
   {% endfor %}
+  </ul>
 </section>
 </div>
 {% else %}

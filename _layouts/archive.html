@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+<nav class="flex-grid">  
+  <a href="{{site.url}}" class="col center"><i class="fas fa-long-arrow-alt-up"></i> Índice</a>
+</nav>
+<section>
 {% capture titulo %}
   {% case page.type %}
     {% when 'tag' %}
@@ -27,3 +31,4 @@ layout: default
   </article>
   </a>
 {% endfor %}
+</section>
