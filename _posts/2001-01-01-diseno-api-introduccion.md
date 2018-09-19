@@ -50,6 +50,6 @@ Con Hypermedia básicamente añadimos información extra al recurso sobre su con
 En siguientes artículos profuncizaremos en como conseguir los niveles que hemos hablado anteriormente. Para que al final podamos conseguir un diseño API que cumpla las expectativas de nuestro clientes y lo suficientemente aclaratorios para que los desarrolladores puedan hacer su trabajo.
 
 ## Referencias
-- [Arquitecturas REST y sus niveles](https://www.arquitecturajava.com/arquitecturas-rest-y-sus-niveles)
-- [Wikipedia: REST](https://es.wikipedia.org/REST)
-- [Conceptos sobre APIs REST](http://asiermarques.com/2013/conceptos-sobre-apis-rest/)
+- [Arquitecturas REST y sus niveles](https://www.arquitecturajava.com/arquitecturas-rest-y-sus-niveles){:target="_blank"}
+- [Wikipedia: REST](https://es.wikipedia.org/REST){:target="_blank"}
+- [Conceptos sobre APIs REST](http://asiermarques.com/2013/conceptos-sobre-apis-rest/){:target="_blank"}
