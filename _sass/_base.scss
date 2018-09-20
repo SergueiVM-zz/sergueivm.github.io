@@ -35,8 +35,12 @@ main {
 
 blockquote{
   p {
-    color: black;
+    color: $simple-code-color;
   }
+}
+
+.highlighter-rouge {
+  color: $simple-code-color;
 }
 
 footer{
