@@ -30,7 +30,7 @@ Estos niveles son:
 
 ### Nivel 1: Uso correcto de URIs
 
-Las URL, Uniform Resource Locator , son un tipo de URI, Uniform Resource Identifier, que además de permitir identificar de forma única el recurso, nos permite localizarlo para poder acceder a él o compartir su ubicación. Un diseño correcto de estas URIs nos permitirá usar el API de una manera intuitiva, es por eso que debemos prestar cuidado.
+Las URL, Uniform Resource Locator, son un tipo de URI, Uniform Resource Identifier, que además de permitir identificar de forma única el recurso, nos permite localizarlo para poder acceder a él o compartir su ubicación. Un diseño correcto de estas URIs nos permitirá usar el API de una manera intuitiva, es por eso que debemos prestar cuidado.
 Si pensamos en Diseño de BBDD tradicional, seria como diseñar las entidades de la BBDD y sus relaciones.
 
 ### Nivel 2: HTTP
