@@ -25,6 +25,13 @@ body{
   color: $color-bic-blue;  
 }
 
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+
 main {
   flex: 1 0 auto;
   h1{
@@ -43,11 +50,6 @@ blockquote{
   color: $simple-code-color;
 }
 
-footer{
-  flex-shrink: 0;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-}
 
 section{
     h1{

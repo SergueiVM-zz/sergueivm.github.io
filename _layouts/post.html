@@ -30,4 +30,10 @@ layout: default
     {% endif %}
   </header>
   <main>{{content}}</main>
+  {% if jekyll.environment == 'production' %}
+  <footer>
+    <h2>Tienes algo que decir... (Deja aquí tus comentarios)</h2>
+    {% include disqus.html %}
+  </footer>
+  {% endif %}
 </article>
