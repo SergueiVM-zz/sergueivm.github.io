@@ -3,19 +3,19 @@ layout: default
 ---
 <nav class="flex-grid">
   {% if page.previous %}
-  <a href="{{page.previous.url}}" class="col left"><i class="fas fa-long-arrow-alt-left"></i> {{page.previous.title}}</a>
+  <a href="{{page.previous.url}}" class="col left"><i class="fas fa-long-arrow-alt-left"></i> {{page.previous.title | markdownify}}</a>
   {% endif %}
-  
+
   <a href="{{site.url}}" class="col center"><i class="fas fa-long-arrow-alt-up"></i> Índice</a>
-  
+
   {% if page.next %}
-  <a href="{{page.next.url}}" class="col right">{{page.next.title}} <i class="fas fa-long-arrow-alt-right"></i></a>
+  <a href="{{page.next.url}}" class="col right">{{page.next.title | markdownify}} <i class="fas fa-long-arrow-alt-right"></i></a>
   {% endif %}
 
 </nav>
 <article>
   <header class="flex-grid">
-    <h1 class="col">{{page.title}}</h1>
+    <h1 class="col">{{page.title | markdownify }}</h1>
     {% if page.tags.size > 0 %}
     <div class="col left">
       <div class="post-it">
