@@ -25,6 +25,7 @@ layout: default
             <li><a href="/{{tag}}">{{tag | capitalize}}</a></li>
           {% endfor %}
           </ul>
+          Y fue publicado el ({{page.date | date: "%d/%m/%Y"}})
       </div>
     </div>
     {% endif %}

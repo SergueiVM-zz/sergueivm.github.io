@@ -1,6 +1,10 @@
 ---
 layout: post
 title: ¿Por qué lo llaman ~~amor~~ API cuando quieren decir ~~sexo~~ servicio?
+tags:
+  - reflexiones
+categories:
+  - articulos
 ---
 Ultimamente se utiliza muy facilmente el término _API REST_, pero realmente queremos en un servicio que ejecute una acción sin más y nos liamos la manta a la cabeza para encajar lo que necesitamos con el término de moda.
 

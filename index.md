@@ -5,11 +5,11 @@ layout: default
 {% if site.posts.size > 0 %}
 <div class="flex-grid">
 <section class="col">
-  <h1>... por fecha</h1>
+  <h1>... por orden inverso de publicación</h1>
   {%for post in site.posts%}
     <a href="{{post.url}}" class="article">
     <article>
-      <h2>{{ post.title | markdownify}} <small>({{post.date | date: "%d/%m/%Y"}})</small></h2>
+      <h2>{{ post.title | markdownify}}</h2>
       <p>{{ post.excerpt}}</p>
     </article>
     </a>
