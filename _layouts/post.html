@@ -6,7 +6,7 @@ layout: default
   <a href="{{page.previous.url}}" class="col left"><i class="fas fa-long-arrow-alt-left"></i> {{page.previous.title | markdownify}}</a>
   {% endif %}
 
-  <a href="{{site.url}}" class="col center"><i class="fas fa-long-arrow-alt-up"></i> Índice</a>
+  <a href="{{site.url}}/" class="col center"><i class="fas fa-long-arrow-alt-up"></i> Índice</a>
 
   {% if page.next %}
   <a href="{{page.next.url}}" class="col right">{{page.next.title | markdownify}} <i class="fas fa-long-arrow-alt-right"></i></a>
@@ -22,7 +22,7 @@ layout: default
           <div class="post-it-title">Este árticulo habla de ...</div>
           <ul>
           {% for tag in page.tags %}
-            <li><a href="/{{tag}}">{{tag | capitalize}}</a></li>
+            <li><a href="/{{tag | slugify | downcase }}">{{tag | capitalize}}</a></li>
           {% endfor %}
           </ul>
           Y fue publicado el ({{page.date | date: "%d/%m/%Y"}})
