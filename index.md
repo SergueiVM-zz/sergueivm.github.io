@@ -1,5 +1,6 @@
 ---
 layout: default
+sitemap: false
 ---
 # Índice
 {% if site.posts.size > 0 %}
