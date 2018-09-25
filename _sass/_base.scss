@@ -37,14 +37,26 @@ main {
   h1{
     text-decoration: underline;
   }
-
 }
 
 blockquote{
+  border-left: 3px solid $simple-code-color;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  &:before {
+    color: $simple-code-color;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
   p {
     color: $simple-code-color;
-  }
+  }  
 }
+
 
 .highlighter-rouge {
   color: $simple-code-color;
