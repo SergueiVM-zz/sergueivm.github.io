@@ -11,7 +11,7 @@ sitemap: false
     <a href="{{post.url}}" class="article">
       <article>
         <h2>{{ post.title | markdownify }}</h2>
-        <p>{{ post.excerpt | truncatewords: 50 | markdownify}}</p>
+        <p>{{ post.excerpt | truncatewords: 50 | strip_newlines | markdownify | strip_html }}</p>
       </article>
     </a>
   {%endfor%}
