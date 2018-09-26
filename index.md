@@ -9,10 +9,10 @@ sitemap: false
   <h1>... por orden inverso de publicación</h1>
   {%for post in site.posts%}
     <a href="{{post.url}}" class="article">
-    <article>
-      <h2>{{ post.title | markdownify }}</h2>
-      <p>{{ post.excerpt | markdownify | truncatewords: 50 }}</p>
-    </article>
+      <article>
+        <h2>{{ post.title | markdownify }}</h2>
+        <p>{{ post.excerpt | truncatewords: 50 | markdownify}}</p>
+      </article>
     </a>
   {%endfor%}
 </section>
@@ -28,11 +28,11 @@ sitemap: false
 </section>
 </div>
 {% else %}
-  Hola!!!
+Hola!!!
 
-  Como podras comprobar estoy remodelando la página por eso aún no hay contenido.
+Como podras comprobar estoy remodelando la página por eso aún no hay contenido.
 
-  Espero tenerla lista muy pronto, por favor, disculpa las molestias.
+Espero tenerla lista muy pronto, por favor, disculpa las molestias.
 
-  Puedes seguirme en las redes sociales que tienes al pie de página o suscribirte al [feed Rss](/feed.xml) para enterarte cuando publico contenidos.
+Puedes seguirme en las redes sociales que tienes al pie de página o suscribirte al [feed Rss](/feed.xml) para enterarte cuando publico contenidos.
 {% endif %}
