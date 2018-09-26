@@ -8,11 +8,9 @@ categories:
 ---
 Ultimamente se utiliza muy facilmente el término _API REST_, pero realmente queremos en un servicio que ejecute una acción sin más y nos liamos la manta a la cabeza para encajar lo que necesitamos con el término de moda.
 
-
-
 <!--more-->
 
- Un _API Rest_ trata de manejar recursos que tienen un modelado que no son puros verbos, sino que representan conceptos de negocio, normalmente son sustamtivos (en singular o en plural), aunque alguna vez nos vemos obligados a diseñar verbos como sustantivos para encajar acciones _determinadas_ que no tendrian cabida dentro de una logica de recursos puros, pero están más o menos _moralmente_ aceptadas.
+Un _API Rest_ trata de manejar recursos que tienen un modelado que no son puros verbos, sino que representan conceptos de negocio, normalmente son sustamtivos (en singular o en plural), aunque alguna vez nos vemos obligados a diseñar verbos como sustantivos para encajar acciones _determinadas_ que no tendrian cabida dentro de una logica de recursos puros, pero están más o menos _moralmente_ aceptadas.
 
 Pero en otras ocasiones, solamente queremos un verbo, por ejemplo, _sumar_, _contratar_, _convertir_, etc. Son acciones, son verbos que no deben cuyo resultado no persistir en el tiempo, queremos unas _funciones puras_, que reciban unos parametros y devuelvan un resultado sin acciones colaterales.
 
