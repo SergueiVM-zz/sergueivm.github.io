@@ -10,8 +10,8 @@ sitemap: false
   {%for post in site.posts%}
     <a href="{{post.url}}" class="article">
     <article>
-      <h2>{{ post.title | markdownify}}</h2>
-      <p>{{ post.excerpt | truncatewords: 50}}</p>
+      <h2>{{ post.title | markdownify }}</h2>
+      <p>{{ post.excerpt | markdownify | truncatewords: 50 }}</p>
     </article>
     </a>
   {%endfor%}
