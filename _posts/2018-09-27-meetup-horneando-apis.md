@@ -4,7 +4,7 @@ title: Recomendación - Meetup - Horneando APIs
 video_url: https://www.youtube.com/embed/Kex0ty5eHIw
 tags:
   - API Design
-  - De otras personas
+  - Visto en YouTube
   - Recomendaciones
 categories:
   - videos
