@@ -20,12 +20,12 @@ layout: default
     <div class="col left">
       <div class="post-it">
           <div class="post-it-title">Este árticulo habla de ...</div>
-          <ul>
+          <ul class="comma-separated">
           {% for tag in page.tags %}
             <li><a href="/{{tag | slugify | downcase }}">{{tag | capitalize}}</a></li>
           {% endfor %}
           </ul>
-          Y fue publicado el ({{page.date | date: "%d/%m/%Y"}})
+          <div class="post-it-footer">Y fue publicado el {{page.date | date: "%d/%m/%Y"}}</div>          
       </div>
     </div>
     {% endif %}
