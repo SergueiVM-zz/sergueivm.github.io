@@ -16,6 +16,8 @@ permalink: /:year/:month/:day/:title
 show_drafts: false
 future: false
 timezone: Europe/Madrid
+locale: es_ES
+lang: es
 
 jekyll-archives:
   enabled: all
@@ -34,3 +36,4 @@ plugins:
   - jekyll-feed
   - jekyll-archives
   - jekyll-sitemap
+  - jekyll-seo-tag
