@@ -3,7 +3,7 @@ owner: SergueiVM
 description: >- # this means to ignore newlines until "baseurl:"
   ...me dedico a hacer software
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://sergueivm.es" # the base hostname & protocol for your site, e.g. http://example.com
 google-analytics: UA-124836677-1
 socials:
   twitter: SergueiVM
@@ -12,7 +12,7 @@ socials:
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:day/:title.html
+permalink: /:year/:month/:day/:title
 show_drafts: false
 future: false
 timezone: Europe/Madrid
@@ -21,16 +21,16 @@ jekyll-archives:
   enabled: all
   layout: archive
   permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    day: '/:year/:month/:day/'
-    tag: '/:name/'
-    category: '/:name/'
+    year: "/:year/"
+    month: "/:year/:month/"
+    day: "/:year/:month/:day/"
+    tag: "/:name/"
+    category: "/:name/"
 
 sass:
-  style: compact   
+  style: compact
 
 plugins:
   - jekyll-feed
   - jekyll-archives
-  - jekyll-sitemap  
+  - jekyll-sitemap
