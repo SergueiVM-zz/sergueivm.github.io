@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="...me dedico a hacer software">
+      <title>SergueiVM:: Diseño API Rest - Introducción</title>     
+      <link rel="shortcut icon" href="/favicon.ico">
+      <link rel="stylesheet" href="/assets/css/main.css">
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Architects+Daughter|Roboto|Roboto+Mono" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="center">
+      <h1><a href="/">Los apuntes de SergueiVM</a></h1>
+    </header>
+    <main class="paper">
+    <nav class="flex-grid">
+  
+
+  <a href="/" class="col center"><i class="fas fa-long-arrow-alt-up"></i> Índice</a>
+
+  
+  <a href="/2018/09/26/por-que-lo-llama-api-cuando-quieren-decir-servicio.html" class="col right"><p>¿Por qué lo llaman <del>amor</del> API cuando quieren decir <del>sexo</del> servicio?</p>
+ <i class="fas fa-long-arrow-alt-right"></i></a>
+  
+
+</nav>
+<article>
+  <header class="flex-grid">
+    <h1 class="col"><p>Diseño API Rest - Introducción</p>
+</h1>
+    
+    <div class="col left">
+      <div class="post-it">
+          <div class="post-it-title">Este árticulo habla de ...</div>
+          <ul class="comma-separated">
+          
+            <li><a href="/api-design">Api design</a></li>
+          
+          </ul>
+          <div class="post-it-footer">Y fue publicado el 21/09/2018</div>          
+      </div>
+    </div>
+    
+  </header>
+  <main><p>El diseño  API puede parecer una ciencia oscura si lo miramos desde fuera, pero si nos fijamos un poco, el estándar HTTP nos da directamente unas buenas prácticas para aplicar al diseño.</p>
+
+<p>En esta serie de articulos vamos intentar aclarar algunos aspectos de esta disciplina.</p>
+
+<!--more-->
+<h2 id="qué-es-un-api-rest">¿Qué es un API REST?</h2>
+
+<p>Un API expone un conjunto de datos y funciones para facilitar las interacciones entre programas informáticos y permite intercambiar información. REST es un estilo arquitectónico que se aplica en el diseño de APIs para los servicios web modernos que se apoya en el protocolo HTTP.</p>
+
+<p>Un API REST consiste en montar/ensamblar/interconectar recursos. Este conjunto de recursos es conocido como “Modelo de recursos del API REST” y permite que cualquier cliente que entienda HTTP puede utilizar estos recursos.</p>
+
+<p>Una buena API REST sabe atraer clientes/desarrolladores, hoy en día hay un mercado de APIs.</p>
+
+<h2 id="qué-pretende-un-diseño-api-rest">¿Qué pretende un Diseño API REST?</h2>
+<p>Un diseño API pretende exponer <strong>con calidad</strong> los recursos para que los clientes puedan utliizarlos. Remarcamos <strong>calidad</strong> ya que es importante seguir unos criterios que hagan las APIs intuitivas.</p>
+
+<p>Existen tres niveles de calidad que se recogen en un modelo llamado <a href="https://martinfowler.com/articles/richardsonMaturityModel.html">Richardson Maturity Model</a> en honor a la persona que lo estableció, Leonard Richardson padre de la arquitectura orientada a recursos.</p>
+
+<p>Estos niveles son:</p>
+
+<h3 id="nivel-1-uso-correcto-de-uris">Nivel 1: Uso correcto de URIs</h3>
+
+<p>Las URL, Uniform Resource Locator, son un tipo de URI, Uniform Resource Identifier, que además de permitir identificar de forma única el recurso, nos permite localizarlo para poder acceder a él o compartir su ubicación. Un diseño correcto de estas URIs nos permitirá usar el API de una manera intuitiva, es por eso que debemos prestar cuidado.
+Si pensamos en Diseño de BBDD tradicional, seria como diseñar las entidades de la BBDD y sus relaciones.</p>
+
+<h3 id="nivel-2-http">Nivel 2: HTTP</h3>
+
+<p>Conocer bien HTTP no es opcional, para diseñar APIs REST los aspectos claves que hay que dominar y tener claros son:</p>
+<ul>
+  <li>Métodos HTTP</li>
+  <li>Códigos de estado</li>
+  <li>Aceptación de tipos de contenido</li>
+</ul>
+
+<p>De esta manera sabremos como nos relacionaremos con los recursos (URIs) que hemos diseñado en el nivel anterior.</p>
+
+<h3 id="nivel-3-hypermedia">Nivel 3: Hypermedia.</h3>
+<p>La finalidad que busca describir es bastante sencillo: conectar mediante vínculos las aplicaciones clientes con las APIs, permitiendo a dichos clientes despreocuparse por conocer de antemano del cómo acceder a los recursos.
+Con Hypermedia básicamente añadimos información extra al recurso sobre su conexión a otros recursos relacionados con él.</p>
+
+<h2 id="conclusión">Conclusión</h2>
+<p>En siguientes artículos profuncizaremos en como conseguir los niveles que hemos hablado anteriormente. Para que al final podamos conseguir un diseño API que cumpla las expectativas de nuestro clientes y lo suficientemente aclaratorios para que los desarrolladores puedan hacer su trabajo.</p>
+
+<h2 id="referencias">Referencias</h2>
+<ul>
+  <li><a href="https://www.arquitecturajava.com/arquitecturas-rest-y-sus-niveles" target="_blank">Arquitecturas REST y sus niveles</a></li>
+  <li><a href="https://es.wikipedia.org/REST" target="_blank">Wikipedia: REST</a></li>
+  <li><a href="http://asiermarques.com/2013/conceptos-sobre-apis-rest/" target="_blank">Conceptos sobre APIs REST</a></li>
+</ul>
+</main>
+  
+  <footer>
+    <h2>Tienes algo que decir... (Deja aquí tus comentarios)</h2>
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "/2018/09/21/diseno-api-introduccion.html";  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = "/2018/09/21/diseno-api-introduccion"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://sergueivm.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </footer>
+  
+</article>
+    </main>
+    <footer class="footer">
+      <ul class="lista-en-linea">
+        <li><a target="_blank" href="http://twitter.com/SergueiVM" class="fab fa-twitter"> <span>Twitter</span></a></li>
+        <li><a target="_blank" href="http://github.com/sergueivm" class="fab fa-github"> <span>Github</span></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/sergueivicario" class="fab fa-linkedin"> <span>LinkedIn<span></a></li>
+        <li><a href="/feed.xml" class="fas fa-rss"> <span>RSS<span></a></li>
+        <li><small>Ult. Generación: 2020-12-14T17:17:25+01:00</small></li>
+      </ul>
+    <footer>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124836677-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124836677-1');
+</script>
+
+    
+  </body>
+</html>

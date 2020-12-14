@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2020-12-14T17:17:25+01:00</updated><id>/feed.xml</id><title type="html">SergueiVM</title><subtitle>...me dedico a hacer software</subtitle><entry><title type="html">Diseño API Rest - Diseñando URIs</title><link href="/2018/10/01/diseno-api-diseno-uris.html" rel="alternate" type="text/html" title="Diseño API Rest - Diseñando URIs" /><published>2018-10-01T00:00:00+02:00</published><updated>2018-10-01T00:00:00+02:00</updated><id>/2018/10/01/diseno-api-diseno-uris</id><content type="html" xml:base="/2018/10/01/diseno-api-diseno-uris.html">&lt;p&gt;El diseño de URIs es la base de un API, en el incluimos los recursos que darán información sobre nuestros recursos, nuestra información de negocio.&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;h2 id=&quot;diseñando-las-uris--los-recursos&quot;&gt;Diseñando las URIs / los recursos.&lt;/h2&gt;
+
+&lt;p&gt;Comenzamos con la pregunta del millón de €uros  ¿Qué es una URI (&lt;strong&gt;U&lt;/strong&gt;niform &lt;strong&gt;R&lt;/strong&gt;esource &lt;strong&gt;I&lt;/strong&gt;dentifier)?
+Y ponemos una cita para responder a la pregunta.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The only thing you can use an identifier for is to refer to an object. When you are not dereferencing, you should not look at the contents of the URI string to gain other information
+— &lt;a href=&quot;https://www.w3.org/DesignIssues/Axioms.html&quot; target=&quot;_blank&quot;&gt;Tim Berners-Lee&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;La URI nos identifica los recursos y los recursos son la información que exponemos a los clientes o consumidores del API, por lo tanto un buen diseño de URIs nos facilita el acceso a dicha información.&lt;/p&gt;
+
+&lt;p&gt;Debemos seguir el paradigma de una web y trata las URIs como &lt;strong&gt;identificadores opacos&lt;/strong&gt;. El cliente/usuario/desarrollador/consumidor no tiene porqué saber cómo se conforma, solo debe saber que es un identificador único y univoco de un recurso.&lt;/p&gt;
+
+&lt;p&gt;Formato de un URI:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+URI = schema “://” autoridad “/” path [“?” query][“#” fragmento]
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Debemos tener en cuenta algunos aspectos&lt;/p&gt;
+&lt;h3 id=&quot;el-slash--debe-usarse-para-indicar-un-relación-jerárquica-al-final-de-una-uri-no-aporta-nada-y-no-se-debe-incluir&quot;&gt;El slash (“&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/&lt;/code&gt;”) debe usarse para indicar un relación jerárquica, al final de una URI no aporta nada y no se debe incluir.&lt;/h3&gt;
+
+&lt;p&gt;Las convenciones de un API REST indican que cada parte del path corresponde con un recurso único en un modelo jerarquico.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+http://api.example.es/ligas/futbol/equipos/athletic-club-de-bilbao
+http://api.example.es/ligas/futbol/equipos/fc-barcelona
+http://api.example.es/ligas/futbol/equipos/real-madrid
+http://api.example.es/ligas/baloncesto/equipos/bilbao-basket
+http://api.example.es/ligas/baloncesto/equipos/fc-barcelona
+http://api.example.es/ligas/baloncesto/equipos/real-madrid
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Si mostramos esto de una manera más gráfica sería como vemos a continuación.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/api-jerarquia-deportes.png&quot; alt=&quot;Jerarquia de Recursos API&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;se-debe-usar-el-guion-medio---para-mejorar-la-legibilidad-y-no-se-deben-utilizar-los-guiones-bajos-_&quot;&gt;Se debe usar el guion medio (“&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;”) para mejorar la legibilidad y no se deben utilizar los guiones bajos (“&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_&lt;/code&gt;”).&lt;/h3&gt;
+
+&lt;h3 id=&quot;las-uris-deben-utilizar-las-minúsculas-para-los-paths&quot;&gt;Las URIs deben utilizar las minúsculas para los paths.&lt;/h3&gt;
+
+&lt;p&gt;Vamos a detenernos es este punto y ver unos ejemplos:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://api.example.es/mi-carpeta/mi-doc&lt;/code&gt;&lt;/dt&gt;
+      &lt;dd&gt;Es una URI correcta según las reglas que hemos indicado anteriormente.&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://API.EXAMPLE.ES/mi-carpeta/mi-doc&lt;/code&gt;&lt;/dt&gt;
+      &lt;dd&gt;El formato de la URI según la especificación RFC-3986 la considera idéntica a la URI anterior.&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://api.example.es/Mi-carpeta/Mi-doc&lt;/code&gt;&lt;/dt&gt;
+      &lt;dd&gt;Es distinta a la número 1 y pueden causar confusión innecesaria, la parte &lt;em&gt;path&lt;/em&gt; es sensible a mayúsculas y minúsculas.&lt;/dd&gt;
+    &lt;/dl&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;otro-aspecto-a-tener-en-cuenta-cuando-diseñemos-la-uris-es-que-no-se-debe-incluir-las-extensiones-en-las-uris&quot;&gt;Otro aspecto a tener en cuenta cuando diseñemos la URIs es que no se debe incluir las extensiones en las URIs&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http://api.example.es/mi-recurso/pepe
+http://api.example.es/mi-recurso/pepe.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;De esta manera desacoplamos el formato físico (json, xml, texto, etc) de la representación funcional. Pero como se hace esto lo veremos más adelante.&lt;/p&gt;</content><author><name></name></author><category term="articulos" /><category term="API Design" /><summary type="html">El diseño de URIs es la base de un API, en el incluimos los recursos que darán información sobre nuestros recursos, nuestra información de negocio. Diseñando las URIs / los recursos. Comenzamos con la pregunta del millón de €uros ¿Qué es una URI (Uniform Resource Identifier)? Y ponemos una cita para responder a la pregunta. The only thing you can use an identifier for is to refer to an object. When you are not dereferencing, you should not look at the contents of the URI string to gain other information — Tim Berners-Lee La URI nos identifica los recursos y los recursos son la información que exponemos a los clientes o consumidores del API, por lo tanto un buen diseño de URIs nos facilita el acceso a dicha información. Debemos seguir el paradigma de una web y trata las URIs como identificadores opacos. El cliente/usuario/desarrollador/consumidor no tiene porqué saber cómo se conforma, solo debe saber que es un identificador único y univoco de un recurso. Formato de un URI: URI = schema “://” autoridad “/” path [“?” query][“#” fragmento] Debemos tener en cuenta algunos aspectos El slash (“/”) debe usarse para indicar un relación jerárquica, al final de una URI no aporta nada y no se debe incluir. Las convenciones de un API REST indican que cada parte del path corresponde con un recurso único en un modelo jerarquico. http://api.example.es/ligas/futbol/equipos/athletic-club-de-bilbao http://api.example.es/ligas/futbol/equipos/fc-barcelona http://api.example.es/ligas/futbol/equipos/real-madrid http://api.example.es/ligas/baloncesto/equipos/bilbao-basket http://api.example.es/ligas/baloncesto/equipos/fc-barcelona http://api.example.es/ligas/baloncesto/equipos/real-madrid Si mostramos esto de una manera más gráfica sería como vemos a continuación. Se debe usar el guion medio (“-”) para mejorar la legibilidad y no se deben utilizar los guiones bajos (“_”). Las URIs deben utilizar las minúsculas para los paths. Vamos a detenernos es este punto y ver unos ejemplos: http://api.example.es/mi-carpeta/mi-doc Es una URI correcta según las reglas que hemos indicado anteriormente. http://API.EXAMPLE.ES/mi-carpeta/mi-doc El formato de la URI según la especificación RFC-3986 la considera idéntica a la URI anterior. http://api.example.es/Mi-carpeta/Mi-doc Es distinta a la número 1 y pueden causar confusión innecesaria, la parte path es sensible a mayúsculas y minúsculas. Otro aspecto a tener en cuenta cuando diseñemos la URIs es que no se debe incluir las extensiones en las URIs http://api.example.es/mi-recurso/pepe http://api.example.es/mi-recurso/pepe.json De esta manera desacoplamos el formato físico (json, xml, texto, etc) de la representación funcional. Pero como se hace esto lo veremos más adelante.</summary></entry><entry><title type="html">Recomendación - Meetup - Horneando APIs</title><link href="/2018/09/27/meetup-horneando-apis.html" rel="alternate" type="text/html" title="Recomendación - Meetup - Horneando APIs" /><published>2018-09-27T00:00:00+02:00</published><updated>2018-09-27T00:00:00+02:00</updated><id>/2018/09/27/meetup-horneando-apis</id><content type="html" xml:base="/2018/09/27/meetup-horneando-apis.html">&lt;p&gt;Recientemente he visto este video que me ha gustado mucho, no estoy de acuerdo con algunas cosas pero en general si. Muchas gracias a &lt;a href=&quot;https://www.paradigmadigital.com&quot; target=&quot;_blank&quot;&gt;Paradigma digital&lt;/a&gt; por este gran aporte.&lt;/p&gt;</content><author><name></name></author><category term="videos" /><category term="API Design" /><category term="Visto en YouTube" /><category term="Recomendaciones" /><summary type="html">Recientemente he visto este video que me ha gustado mucho, no estoy de acuerdo con algunas cosas pero en general si. Muchas gracias a Paradigma digital por este gran aporte.</summary></entry><entry><title type="html">¿Por qué lo llaman ~~amor~~ API cuando quieren decir ~~sexo~~ servicio?</title><link href="/2018/09/26/por-que-lo-llama-api-cuando-quieren-decir-servicio.html" rel="alternate" type="text/html" title="¿Por qué lo llaman ~~amor~~ API cuando quieren decir ~~sexo~~ servicio?" /><published>2018-09-26T00:00:00+02:00</published><updated>2018-09-26T00:00:00+02:00</updated><id>/2018/09/26/por-que-lo-llama-api-cuando-quieren-decir-servicio</id><content type="html" xml:base="/2018/09/26/por-que-lo-llama-api-cuando-quieren-decir-servicio.html">&lt;p&gt;Ultimamente se utiliza muy facilmente el término &lt;em&gt;API REST&lt;/em&gt;, pero realmente queremos en un servicio que ejecute una acción sin más y nos liamos la manta a la cabeza para encajar lo que necesitamos con el término de moda.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Un &lt;em&gt;API Rest&lt;/em&gt; trata de manejar recursos que tienen un modelado que no son puros verbos, sino que representan conceptos de negocio, normalmente son sustamtivos (en singular o en plural), aunque alguna vez nos vemos obligados a diseñar verbos como sustantivos para encajar acciones &lt;em&gt;determinadas&lt;/em&gt; que no tendrian cabida dentro de una logica de recursos puros, pero están más o menos &lt;em&gt;moralmente&lt;/em&gt; aceptadas.&lt;/p&gt;
+
+&lt;p&gt;Pero en otras ocasiones, solamente queremos un verbo, por ejemplo, &lt;em&gt;sumar&lt;/em&gt;, &lt;em&gt;contratar&lt;/em&gt;, &lt;em&gt;convertir&lt;/em&gt;, etc. Son acciones, son verbos que no deben cuyo resultado no persistir en el tiempo, queremos unas &lt;em&gt;funciones puras&lt;/em&gt;, que reciban unos parametros y devuelvan un resultado sin acciones colaterales.&lt;/p&gt;
+
+&lt;p&gt;Pero con la &lt;em&gt;APItitis&lt;/em&gt; actual, nos sentimos en la obligación crear un API a toda costa y eso no es sano porque desvirtuamos lo que realmente estamos diseñando.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;— Pero es que yo quiero utilizar REST
+— dijo el desarrollador de turno.&lt;/p&gt;
+
+  &lt;p&gt;— ¿Por qué?
+— pregunto yo&lt;/p&gt;
+
+  &lt;p&gt;— Porqué quiero usar JSON y verbos HTTP&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;¡¡¡Acabaramos!!! REST es un estandar que usar URIs como recursos y los verbos pero que sea REST no significa que sea API.&lt;/p&gt;
+
+&lt;p&gt;Hoy en día están los servicios serverless, acciones que se invocan que se levantan cuando el cliente requiere la operacion y se apagan para &lt;em&gt;ahorrar&lt;/em&gt; (tomad esto como una licencia poetica) pero que la forma de actuar pueder perfectamente con JSON y verbos HTTP.&lt;/p&gt;
+
+&lt;p&gt;Que quiero decir con esto, que &lt;strong&gt;NO os compliqueis&lt;/strong&gt; la vida si quereis hacer un servicio, hacedlo, no necesita ser SOAP, podeis hacerlo REST pero llamadlo por su nombre &lt;strong&gt;SERVICIO REST&lt;/strong&gt; un API conlleva un nivel más que en ocasiones entorpece en lugar de ayudar.&lt;/p&gt;</content><author><name></name></author><category term="articulos" /><category term="reflexiones" /><summary type="html">Ultimamente se utiliza muy facilmente el término API REST, pero realmente queremos en un servicio que ejecute una acción sin más y nos liamos la manta a la cabeza para encajar lo que necesitamos con el término de moda. Un API Rest trata de manejar recursos que tienen un modelado que no son puros verbos, sino que representan conceptos de negocio, normalmente son sustamtivos (en singular o en plural), aunque alguna vez nos vemos obligados a diseñar verbos como sustantivos para encajar acciones determinadas que no tendrian cabida dentro de una logica de recursos puros, pero están más o menos moralmente aceptadas. Pero en otras ocasiones, solamente queremos un verbo, por ejemplo, sumar, contratar, convertir, etc. Son acciones, son verbos que no deben cuyo resultado no persistir en el tiempo, queremos unas funciones puras, que reciban unos parametros y devuelvan un resultado sin acciones colaterales. Pero con la APItitis actual, nos sentimos en la obligación crear un API a toda costa y eso no es sano porque desvirtuamos lo que realmente estamos diseñando. — Pero es que yo quiero utilizar REST — dijo el desarrollador de turno. — ¿Por qué? — pregunto yo — Porqué quiero usar JSON y verbos HTTP ¡¡¡Acabaramos!!! REST es un estandar que usar URIs como recursos y los verbos pero que sea REST no significa que sea API. Hoy en día están los servicios serverless, acciones que se invocan que se levantan cuando el cliente requiere la operacion y se apagan para ahorrar (tomad esto como una licencia poetica) pero que la forma de actuar pueder perfectamente con JSON y verbos HTTP. Que quiero decir con esto, que NO os compliqueis la vida si quereis hacer un servicio, hacedlo, no necesita ser SOAP, podeis hacerlo REST pero llamadlo por su nombre SERVICIO REST un API conlleva un nivel más que en ocasiones entorpece en lugar de ayudar.</summary></entry><entry><title type="html">Diseño API Rest - Introducción</title><link href="/2018/09/21/diseno-api-introduccion.html" rel="alternate" type="text/html" title="Diseño API Rest - Introducción" /><published>2018-09-21T00:00:00+02:00</published><updated>2018-09-21T00:00:00+02:00</updated><id>/2018/09/21/diseno-api-introduccion</id><content type="html" xml:base="/2018/09/21/diseno-api-introduccion.html">&lt;p&gt;El diseño  API puede parecer una ciencia oscura si lo miramos desde fuera, pero si nos fijamos un poco, el estándar HTTP nos da directamente unas buenas prácticas para aplicar al diseño.&lt;/p&gt;
+
+&lt;p&gt;En esta serie de articulos vamos intentar aclarar algunos aspectos de esta disciplina.&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;h2 id=&quot;qué-es-un-api-rest&quot;&gt;¿Qué es un API REST?&lt;/h2&gt;
+
+&lt;p&gt;Un API expone un conjunto de datos y funciones para facilitar las interacciones entre programas informáticos y permite intercambiar información. REST es un estilo arquitectónico que se aplica en el diseño de APIs para los servicios web modernos que se apoya en el protocolo HTTP.&lt;/p&gt;
+
+&lt;p&gt;Un API REST consiste en montar/ensamblar/interconectar recursos. Este conjunto de recursos es conocido como “Modelo de recursos del API REST” y permite que cualquier cliente que entienda HTTP puede utilizar estos recursos.&lt;/p&gt;
+
+&lt;p&gt;Una buena API REST sabe atraer clientes/desarrolladores, hoy en día hay un mercado de APIs.&lt;/p&gt;
+
+&lt;h2 id=&quot;qué-pretende-un-diseño-api-rest&quot;&gt;¿Qué pretende un Diseño API REST?&lt;/h2&gt;
+&lt;p&gt;Un diseño API pretende exponer &lt;strong&gt;con calidad&lt;/strong&gt; los recursos para que los clientes puedan utliizarlos. Remarcamos &lt;strong&gt;calidad&lt;/strong&gt; ya que es importante seguir unos criterios que hagan las APIs intuitivas.&lt;/p&gt;
+
+&lt;p&gt;Existen tres niveles de calidad que se recogen en un modelo llamado &lt;a href=&quot;https://martinfowler.com/articles/richardsonMaturityModel.html&quot;&gt;Richardson Maturity Model&lt;/a&gt; en honor a la persona que lo estableció, Leonard Richardson padre de la arquitectura orientada a recursos.&lt;/p&gt;
+
+&lt;p&gt;Estos niveles son:&lt;/p&gt;
+
+&lt;h3 id=&quot;nivel-1-uso-correcto-de-uris&quot;&gt;Nivel 1: Uso correcto de URIs&lt;/h3&gt;
+
+&lt;p&gt;Las URL, Uniform Resource Locator, son un tipo de URI, Uniform Resource Identifier, que además de permitir identificar de forma única el recurso, nos permite localizarlo para poder acceder a él o compartir su ubicación. Un diseño correcto de estas URIs nos permitirá usar el API de una manera intuitiva, es por eso que debemos prestar cuidado.
+Si pensamos en Diseño de BBDD tradicional, seria como diseñar las entidades de la BBDD y sus relaciones.&lt;/p&gt;
+
+&lt;h3 id=&quot;nivel-2-http&quot;&gt;Nivel 2: HTTP&lt;/h3&gt;
+
+&lt;p&gt;Conocer bien HTTP no es opcional, para diseñar APIs REST los aspectos claves que hay que dominar y tener claros son:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Métodos HTTP&lt;/li&gt;
+  &lt;li&gt;Códigos de estado&lt;/li&gt;
+  &lt;li&gt;Aceptación de tipos de contenido&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;De esta manera sabremos como nos relacionaremos con los recursos (URIs) que hemos diseñado en el nivel anterior.&lt;/p&gt;
+
+&lt;h3 id=&quot;nivel-3-hypermedia&quot;&gt;Nivel 3: Hypermedia.&lt;/h3&gt;
+&lt;p&gt;La finalidad que busca describir es bastante sencillo: conectar mediante vínculos las aplicaciones clientes con las APIs, permitiendo a dichos clientes despreocuparse por conocer de antemano del cómo acceder a los recursos.
+Con Hypermedia básicamente añadimos información extra al recurso sobre su conexión a otros recursos relacionados con él.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
+&lt;p&gt;En siguientes artículos profuncizaremos en como conseguir los niveles que hemos hablado anteriormente. Para que al final podamos conseguir un diseño API que cumpla las expectativas de nuestro clientes y lo suficientemente aclaratorios para que los desarrolladores puedan hacer su trabajo.&lt;/p&gt;
+
+&lt;h2 id=&quot;referencias&quot;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.arquitecturajava.com/arquitecturas-rest-y-sus-niveles&quot; target=&quot;_blank&quot;&gt;Arquitecturas REST y sus niveles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://es.wikipedia.org/REST&quot; target=&quot;_blank&quot;&gt;Wikipedia: REST&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://asiermarques.com/2013/conceptos-sobre-apis-rest/&quot; target=&quot;_blank&quot;&gt;Conceptos sobre APIs REST&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="articulos" /><category term="API Design" /><summary type="html">El diseño API puede parecer una ciencia oscura si lo miramos desde fuera, pero si nos fijamos un poco, el estándar HTTP nos da directamente unas buenas prácticas para aplicar al diseño.</summary></entry></feed>
