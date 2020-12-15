@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<nav class="flex-grid">  
+  <a href="{{site.url}}/" class="col center"><i class="fas fa-long-arrow-alt-up"></i> Índice</a>
+</nav>
+<section>
+{% capture titulo %}
+  {% case page.type %}
+    {% when 'tag' %}
+      Contenidos etiquetados con "{{page.title}}"
+    {% when 'category' %}
+      Contenidos de la categoria "{{page.title}}"
+    {% when 'year' %}
+      Contenidos de {{ page.date | date: "%Y" }}
+    {% when 'month' %}
+      Contenidos de {{ page.date | date: '%B, %Y' }}
+    {% when 'day' %}
+      Contenidos del día {{ page.date | date: "%d/%m/%Y" }}
+    {% else %}
+      Lista de contenidos
+  {% endcase %}
+{% endcapture %}
+<h1>{{titulo}}</h1>
+
+{% for post in page.posts %}
+  <a href="{{post.url}}" class="article">
+  <article>
+    <h2>{{ post.title}}</h2>
+    <p>{{ post.excerpt}}</p>
+  </article>
+  </a>
+{% endfor %}
+</section>

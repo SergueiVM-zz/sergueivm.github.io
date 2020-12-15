@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>{{ site.title }}{% if page.title %}:: {{ page.title }}{% endif %}</title>     
+      {% seo %}
+      <link rel="shortcut icon" href="/favicon.ico">
+      <link rel="stylesheet" href="/assets/css/main.css">
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Architects+Daughter|Roboto|Roboto+Mono" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  </head>
+  <body>
+    <header class="center">
+      <div class="site-brand"><a href="{{site.url}}/">{{site.title}}</a></div>
+    </header>
+    <main class="paper">
+    {{content}}
+    </main>
+    <footer class="footer">
+      <ul class="lista-en-linea">
+        <li><a target="_blank" href="http://twitter.com/{{site.socials.twitter}}" class="fab fa-twitter"> <span>Twitter</span></a></li>
+        <li><a target="_blank" href="http://github.com/{{site.socials.github}}" class="fab fa-github"> <span>Github</span></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/{{site.socials.linkedin}}" class="fab fa-linkedin"> <span>LinkedIn<span></a></li>
+        <li><a href="/feed.xml" class="fas fa-rss"> <span>RSS<span></a></li>
+        <li><small>Ult. Generación: {{site.time | date_to_xmlschema}}</small></li>
+      </ul>
+    <footer>
+    {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
+  </body>
+</html>
