@@ -12,29 +12,20 @@ socials:
 
 # Build settings
 markdown: kramdown
-permalink: /:year/:month/:day/:title
 show_drafts: false
 future: false
 timezone: Europe/Madrid
 locale: es_ES
 lang: es
 
-jekyll-archives:
-  enabled: all
-  layout: archive
-  permalinks:
-    year: "/:year/"
-    month: "/:year/:month/"
-    day: "/:year/:month/:day/"
-    tag: "/:name/"
-    category: "/:name/"
+permalink: /:categories/:title
 
 sass:
   style: compact
 
 plugins:
   - jekyll-feed
-  - jekyll-archives
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-target-blank
+  - jekyll-redirect-from

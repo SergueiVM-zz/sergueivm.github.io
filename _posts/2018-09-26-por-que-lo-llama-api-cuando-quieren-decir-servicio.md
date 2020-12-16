@@ -5,6 +5,8 @@ tags:
   - reflexiones
 categories:
   - articulos
+redirect_from:
+  - /2018/09/26/por-que-lo-llama-api-cuando-quieren-decir-servicio
 ---
 
 Ultimamente se utiliza muy facilmente el término _API REST_, pero realmente queremos en un servicio que ejecute una acción sin más y nos liamos la manta a la cabeza para encajar lo que necesitamos con el término de moda.
@@ -18,10 +20,10 @@ Pero en otras ocasiones, solamente queremos un verbo, por ejemplo, _sumar_, _con
 Pero con la _APItitis_ actual, nos sentimos en la obligación crear un API a toda costa y eso no es sano porque desvirtuamos lo que realmente estamos diseñando.
 
 > — Pero es que yo quiero utilizar REST
-— dijo el desarrollador de turno.
+> — dijo el desarrollador de turno.
 >
 > — ¿Por qué?
-— pregunto yo
+> — pregunto yo
 >
 > — Porqué quiero usar JSON y verbos HTTP
 
