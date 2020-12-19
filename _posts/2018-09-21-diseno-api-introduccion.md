@@ -5,8 +5,7 @@ tags:
   - API Design
 categories:
   - articulos
-redirect_from:
-  - /2018/09/21/diseno-api-introduccion
+permalink: /2018/09/21/diseno-api-introduccion
 ---
 
 El diseño API puede parecer una ciencia oscura si lo miramos desde fuera, pero si nos fijamos un poco, el estándar HTTP nos da directamente unas buenas prácticas para aplicar al diseño.

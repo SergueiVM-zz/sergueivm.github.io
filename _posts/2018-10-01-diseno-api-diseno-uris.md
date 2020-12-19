@@ -5,8 +5,7 @@ tags:
   - API Design
 categories:
   - articulos
-redirect_from:
-  - /2018/10/01/diseno-api-diseno-uris
+permalink: /2018/10/01/diseno-api-diseno-uris
 ---
 
 El diseño de URIs es la base de un API, en el incluimos los recursos que darán información sobre nuestros recursos, nuestra información de negocio.
@@ -52,7 +51,13 @@ http://api.example.es/ligas/baloncesto/equipos/real-madrid
 
 Si mostramos esto de una manera más gráfica sería como vemos a continuación.
 
-![Jerarquia de Recursos API](/assets/images/api-jerarquia-deportes.png)
+<amp-img
+    src="/assets/images/api-jerarquia-deportes.png"
+    layout="fixed"
+    height="124"
+    width="567"
+    alt="Jerarquia de Recursos API"
+    title="Jerarquia de Recursos API"/>
 
 ### Se debe usar el guion medio ("`-`") para mejorar la legibilidad y no se deben utilizar los guiones bajos ("`_`").
 

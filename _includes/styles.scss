@@ -1,0 +1,26 @@
+@import "variables-color";
+@import "paper";
+@import "amp-source.min";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Architects Daughter";
+  color: $color-bic-blue;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      /**font-size: 1.2em;**/
+      color: green;
+      font-weight: bold;
+    }
+  }
+  #cookie-consent-ui {
+    background-color: white;
+  }
+}

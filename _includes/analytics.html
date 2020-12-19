@@ -1,9 +1,12 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{site.google-analytics}}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '{{site.google-analytics}}');
+<amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+  "vars" : {
+    "gtag_id": "{{site.google-analytics}}",
+    "config" : {
+      "{{site.google-analytics}}": { "groups": "default" }
+    }
+  }
+}
 </script>
+</amp-analytics>

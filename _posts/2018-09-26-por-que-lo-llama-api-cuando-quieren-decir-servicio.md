@@ -5,8 +5,7 @@ tags:
   - reflexiones
 categories:
   - articulos
-redirect_from:
-  - /2018/09/26/por-que-lo-llama-api-cuando-quieren-decir-servicio
+permalink: /2018/09/26/por-que-lo-llama-api-cuando-quieren-decir-servicio
 ---
 
 Ultimamente se utiliza muy facilmente el término _API REST_, pero realmente queremos en un servicio que ejecute una acción sin más y nos liamos la manta a la cabeza para encajar lo que necesitamos con el término de moda.
