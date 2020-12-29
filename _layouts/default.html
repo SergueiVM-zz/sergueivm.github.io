@@ -2,15 +2,12 @@
 <html amp lang="{{site.lang}}">
   {% include head.html %}
   <body>
-    <header class="center">
       {% include header.html %}
-    </header>
     <main class="paper">
-    {{ content }}
+      <h1>{{page.title | markdownify}}</h1>
+      {{ content }}
     </main>
-    {% comment %}
-        {% include analytics.html %}
-    {% endcomment %}
-    {% include cookies-advice.html %}
   </body>
+  {% include footer.html %}
+  {% include analytics.html %}
 </html>

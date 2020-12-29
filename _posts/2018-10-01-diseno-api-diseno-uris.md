@@ -1,16 +1,15 @@
 ---
 layout: post
-title: "Diseño API Rest - Diseñando URIs"
+title: Diseño API Rest - Diseñando URIs
+description:  El diseño de URIs es la base de un API, en él incluimos los recursos que darán información sobre nuestros recursos, nuestra información de negocio.
+excerpt:  El diseño de URIs es la base de un API, en él incluimos los recursos que darán información sobre nuestros recursos, nuestra información de negocio.
 tags:
   - API Design
 categories:
   - articulos
 permalink: /2018/10/01/diseno-api-diseno-uris
 ---
-
 El diseño de URIs es la base de un API, en el incluimos los recursos que darán información sobre nuestros recursos, nuestra información de negocio.
-
-<!--more-->
 
 ## Diseñando las URIs / los recursos.
 
@@ -18,7 +17,7 @@ Comenzamos con la pregunta del millón de €uros ¿Qué es una URI (**U**niform
 Y ponemos una cita para responder a la pregunta.
 
 > The only thing you can use an identifier for is to refer to an object. When you are not dereferencing, you should not look at the contents of the URI string to gain other information
-> — [Tim Berners-Lee](https://www.w3.org/DesignIssues/Axioms.html){:target="\_blank"}
+> — [Tim Berners-Lee](https://www.w3.org/DesignIssues/Axioms.html){:target="_blank" rel="nofollow noopener noreferrer"}
 
 La URI nos identifica los recursos y los recursos son la información que exponemos a los clientes o consumidores del API, por lo tanto un buen diseño de URIs nos facilita el acceso a dicha información.
 
@@ -57,7 +56,7 @@ Si mostramos esto de una manera más gráfica sería como vemos a continuación.
     height="124"
     width="567"
     alt="Jerarquia de Recursos API"
-    title="Jerarquia de Recursos API"/>
+    title="Jerarquia de Recursos API"></amp-img>
 
 ### Se debe usar el guion medio ("`-`") para mejorar la legibilidad y no se deben utilizar los guiones bajos ("`_`").
 

@@ -10,7 +10,7 @@ permalink: /2018/09/21/diseno-api-introduccion
 
 El diseño API puede parecer una ciencia oscura si lo miramos desde fuera, pero si nos fijamos un poco, el estándar HTTP nos da directamente unas buenas prácticas para aplicar al diseño.
 
-En esta serie de articulos vamos intentar aclarar algunos aspectos de esta disciplina.
+En esta serie de artículos vamos intentar aclarar algunos aspectos de esta disciplina.
 
 <!--more-->
 
@@ -26,7 +26,7 @@ Una buena API REST sabe atraer clientes/desarrolladores, hoy en día hay un merc
 
 Un diseño API pretende exponer **con calidad** los recursos para que los clientes puedan utliizarlos. Remarcamos **calidad** ya que es importante seguir unos criterios que hagan las APIs intuitivas.
 
-Existen tres niveles de calidad que se recogen en un modelo llamado [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html) en honor a la persona que lo estableció, Leonard Richardson padre de la arquitectura orientada a recursos.
+Existen tres niveles de calidad que se recogen en un modelo llamado [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html){:target="_blank" rel="nofollow noopener noreferrer"} en honor a la persona que lo estableció, Leonard Richardson padre de la arquitectura orientada a recursos.
 
 Estos niveles son:
 
@@ -52,10 +52,10 @@ Con Hypermedia básicamente añadimos información extra al recurso sobre su con
 
 ## Conclusión
 
-En siguientes artículos profuncizaremos en como conseguir los niveles que hemos hablado anteriormente. Para que al final podamos conseguir un diseño API que cumpla las expectativas de nuestro clientes y lo suficientemente aclaratorios para que los desarrolladores puedan hacer su trabajo.
+En siguientes artículos profundizaremos en como conseguir los niveles que hemos hablado anteriormente. Para que al final podamos conseguir un diseño API que cumpla las expectativas de nuestro clientes y lo suficientemente aclaratorios para que los desarrolladores puedan hacer su trabajo.
 
 ## Referencias
 
-- [Arquitecturas REST y sus niveles](https://www.arquitecturajava.com/arquitecturas-rest-y-sus-niveles){:target="\_blank"}
-- [Wikipedia: REST](https://es.wikipedia.org/REST){:target="\_blank"}
-- [Conceptos sobre APIs REST](http://asiermarques.com/2013/conceptos-sobre-apis-rest/){:target="\_blank"}
+- [Arquitecturas REST y sus niveles](https://www.arquitecturajava.com/arquitecturas-rest-y-sus-niveles){:target="_blank" rel="nofollow noopener noreferrer"}
+- [Wikipedia: REST](https://es.wikipedia.org/REST){:target="_blank" rel="nofollow noopener noreferrer"}
+- [Conceptos sobre APIs REST](http://asiermarques.com/2013/conceptos-sobre-apis-rest/){:target="_blank" rel="nofollow noopener noreferrer"}
