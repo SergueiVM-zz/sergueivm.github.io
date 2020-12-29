@@ -1,0 +1,12 @@
+<hr>
+{% if page.previous.url or page.next.url%}
+¿Quieres seguir leyendo? Aquí debajo tienes algo que puede que te interese.
+<ul class="recommendation">
+{% if page.previous.url %}
+<li><a href="{{page.previous.url}}">{{page.previous.title}}</a></li>
+{% endif %}
+{% if page.next.url %}
+<li><a href="{{page.next.url}}">{{page.next.title}}</a></li>
+{% endif %}
+</ul>
+{% endif %}

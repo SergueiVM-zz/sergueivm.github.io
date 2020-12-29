@@ -1,38 +1,14 @@
 ---
+title: Apuntes tecnológicos del día a día
 layout: default
-sitemap: false
+date: 2020-12-29T22:04:07.720Z
+last_modified_at: 2020-12-29T22:04:07.720Z
 ---
-# Índice
-{% if site.posts.size > 0 %}
-<div class="flex-grid">
-<section class="col">
-  <h1>... por orden inverso de publicación</h1>
-  {%for post in site.posts%}
-    <a href="{{post.url}}" class="article">
-      <article>
-        <h2>{{ post.title | markdownify }}</h2>
-        <p>{{ post.excerpt | truncatewords: 50 | strip_newlines | markdownify | strip_html }}</p>
-      </article>
-    </a>
-  {%endfor%}
-</section>
+Llevo mucho años dedicándome al desarrollo de software y a la tecnología, en este blog voy a ir dejando apuntes/artículos que me han servido para solucionar problemas que he ido encontrando y que creo que a alguien puede interesar.
 
-<section class="col">
-  <h1>... por temas</h1>
-  <ul>
-  {% assign tags = site.tags | sort %}
-  {% for tag in tags %}
-      <li><a href="/{{tag[0] | slugify | downcase }}"><strong>{{tag[0] | markdownify | capitalize}}</strong></a></li>
-  {% endfor %}
-  </ul>
-</section>
-</div>
-{% else %}
-Hola!!!
+Puedes encontrar desde como programar un patrón de software determinado en *Java* o *Python* hasta una utilidad que haya descubierto para instalar en Windows y que me ayude a mejorar mi rendimiento cuando trabajo. Desde pequeños trucos hasta los más grandes consejos que pueda darte. Todo tiene cabida en este blog, siempre que este relacionado con la tecnología.
 
-Como podras comprobar estoy remodelando la página por eso aún no hay contenido.
-
-Espero tenerla lista muy pronto, por favor, disculpa las molestias.
-
-Puedes seguirme en las redes sociales que tienes al pie de página o suscribirte al [feed Rss](/feed.xml) para enterarte cuando publico contenidos.
-{% endif %}
+Puedes comprobar cuales son las últimos artículos que he escrito:
+{%for post in site.posts%}
+- [{{post.title}}]({{post.url}}): {{ post.excerpt | truncatewords: 50 | strip_newlines | markdownify | strip_html }}
+{%endfor%}
