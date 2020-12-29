@@ -1,7 +1,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    {% if page.sitemap == false or post.sitemap == false%}
+    <meta name="robots" content="noindex" />
+    {% else %}
     {% seo %}
+    {% endif%}
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
