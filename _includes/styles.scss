@@ -1,5 +1,6 @@
 @import "variables-color";
 @import "paper";
+@import "lista-en-linea";
 
 html {
   height: 100%;
@@ -60,6 +61,11 @@ body {
   footer {
     background-color: white;
     text-align: center;
+    color: $color-bic-blue;
+
+    a {
+      color: $color-bic-blue;
+    }
     // min-height: 100px;
   }
 }
