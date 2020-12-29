@@ -1,7 +1,8 @@
 ---
 title: Apuntes tecnológicos del día a día
 layout: default
-last_modified_at: 2020-12-27T12:47:32.011Z
+date: 2020-12-29T22:04:07.720Z
+last_modified_at: 2020-12-29T22:04:07.720Z
 ---
 Llevo mucho años dedicándome al desarrollo de software y a la tecnología, en este blog voy a ir dejando apuntes/artículos que me han servido para solucionar problemas que he ido encontrando y que creo que a alguien puede interesar.
 
