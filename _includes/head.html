@@ -6,6 +6,9 @@
     {% else %}
     {% seo %}
     {% endif%}
+    <script type="application/ld+json">
+        {% include metadata.json %}
+    </script>
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
