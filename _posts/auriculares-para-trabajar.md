@@ -25,6 +25,24 @@ Mi historia comienza con unos auriculares con cable, ya que fue mi evolucion nat
   layout="responsive">
 </img>](https://amzn.to/36ujbuM){:target="_blank" rel="nofollow noopener noreferrer"}
 
+## Auriculares bluetooth de una oreja
+
+[<img alt="Mpow Pro Wireless Headphones Bluetooth Headset con microfono y cancelacion de ruido"
+  src="https://ae04.alicdn.com/kf/H658aca4b5fe5438ca349656e9f40658aV.jpg"
+  width="300"
+  height="400"
+  layout="responsive">
+</img>](https://s.click.aliexpress.com/e/_A9Filc){:target="_blank" rel="nofollow noopener noreferrer"}
+
+## Auriculares bluetooth de dos orejas
+
+[<img alt="MPOW HC5 Wireless Bluetooth 5.0 Headphones con microfono 8.0 Cancelacion de ruido. 22 ahora de autonomia. Conexion a PC y teléfono móvil"
+  src="https://ae04.alicdn.com/kf/H39102bcd17914184bdcd9b567b564280Y.jpg"
+  width="300"
+  height="400"
+  layout="responsive">
+</img>](https://s.click.aliexpress.com/e/_ASpf1s){:target="_blank" rel="nofollow noopener noreferrer"}
+
 ## Donde comprar los auriculares recomendados para trabajar
 
 <amp-iframe
