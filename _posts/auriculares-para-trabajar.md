@@ -20,12 +20,12 @@ Mi historia comienza con unos auriculares con cable, ya que fue mi evolucion nat
 
 Por aquel entonces trabajaba en la oficina, y en el area en la que nos entrabamos era muy ruidosa. Estos auriculares con microfono me proporcionaban un gran aislamiento del ruido ambiente y el microfono tiene una gran sensibilidad. Por supuesto, tiene cancelacion de ruido y hace que las conversaciones se desarrollen de manera muy fluida.
 
-[<img alt="Auriculares Mpow 071 USB Computer Headset"
+[<amp-img alt="Auriculares Mpow 071 USB Computer Headset"
   src="https://m.media-amazon.com/images/S/aplus-media/vc/f9d40c21-03a3-4868-911f-ed732c068486.__CR0,0,300,400_PT0_SX300_V1___.png"
   width="300"
   height="400"
   layout="responsive">
-</img>](https://amzn.to/36ujbuM){:target="_blank" rel="nofollow noopener noreferrer"}
+</amp-img>](https://amzn.to/36ujbuM){:target="_blank" rel="nofollow noopener noreferrer"}
 
 El cable de este modelo se traba de un conector jack 3.5 mm, que nos da la posibilidad de conectarnos a telefonos moviles o tablets que dispongan de esa conexion.
 
