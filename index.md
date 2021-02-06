@@ -10,5 +10,5 @@ Puedes encontrar desde como programar un patrón de software determinado en *Jav
 
 Puedes comprobar cuales son las últimos artículos que he escrito:
 {%for post in site.posts%}
-- [{{post.title}}]({{post.url}}): {{ post.excerpt | truncatewords: 50 | strip_newlines | markdownify | strip_html }}
+- [{{post.title}}]({{post.url}}): {% if post.description %}{{ post.description | strip_newlines }}{%else%}{{ post.excerpt | truncatewords: 50 | strip_newlines | markdownify | strip_html }}{% endif %}
 {%endfor%}
